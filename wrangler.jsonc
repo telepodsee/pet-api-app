@@ -2,7 +2,14 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "pet-api-app",
   "main": "src/index.ts",
-  "compatibility_date": "2025-10-15"
+  "compatibility_date": "2025-10-15",
+  "assets": {
+    "directory": "./public", // 여기에 favicon.ico 넣기
+    "binding": "ASSETS", // 런타임에서 env.ASSETS 로 접근 가능
+    // 필요 시 옵션:
+    // "run_worker_first": ["/api/*"], // /api/* 는 먼저 워커(=Hono)로 보내고 나머지는 에셋이 처리
+    // "not_found_handling": "404-page" // 또는 "single-page-application"
+  },
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],

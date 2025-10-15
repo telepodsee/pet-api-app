@@ -1,9 +1,11 @@
 import { Hono } from 'hono';
 
-const app = new Hono()
+const app = new Hono();
 
-app.get('/', (c) => {
-  return c.text('Hello Telepodsee Hono!')
-})
+app.get('/', c => {
+  return c.text('Hello Telepodsee Hono!!');
+});
 
-export default app
+app.get('/api/health', c => c.json({ ok: true }));
+
+export default app;
